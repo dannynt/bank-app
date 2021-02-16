@@ -1,12 +1,28 @@
 version: '3.3'
+
 services:
   # Run a mysql database in docker container
   # Use it with command 'docker-compose up bank-db'
   bank-db:
-    image: "mysql:5.7.24"
+    image: "mysql"
     container_name: "bank-mysql"
+    restart: always
+    expose:
+      - "3306"
     ports:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: "test"
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+  backend:
+    depends_on:
+      - bank-db
+    build:
+      context: ./backend
+    ports:
+      - 4000:4000

@@ -78,7 +78,7 @@ createConnection()
 
         //Uncomment this if you want to create initial admin user into db
         createInitialUser()
-
+        app.get("/", async (req, res) => res.json({hello: 'world'}))
         app.post("/login", async (req, res) => await new cmds.LoginCommand().execute(req, res))
         app.get("/validate-login", checkSes, async (req, res) => await new cmds.LoginCommand().execute(req, res))
         app.post("/logout", async (req, res) => await new cmds.LogOutCommand().execute(req, res))
@@ -97,8 +97,8 @@ createConnection()
 
         app.get("/history",checkSes, async(req,res) => await new cmds.ViewHistoryCommand().execute(req,res));
 
-        app.listen(3000, () => {
-            console.log("Server started on port 3000!");
+        app.listen(4000, () => {
+            console.log("Server started on port 4000!");
         });
     })
     .catch(error => console.log(error));

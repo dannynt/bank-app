@@ -1,0 +1,49 @@
+##FOR TESTING PURPOSES
+GET http://localhost:3000/
+### 
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"test",
+    "password":"parool"
+}
+
+###
+
+POST http://localhost:3000/createuser
+
+Content-Type: application/json
+
+{
+    "username":"test",
+    "password":"parool",
+    "firstname":"Test",
+    "lastname":"Test",
+    "role":"admin"
+}
+
+#Requesting money
+POST http://localhost:3000/request
+
+Content-Type: application/json
+
+{
+    "from":"test",
+    "amount":"10",
+    "description":"Test"
+}
+
+#Viewing requests(made by me and to me all together)
+GET http://localhost:3000/request
+
+#Req_id got from viewing requests as id
+#Will create transaction on call
+#Can only be called by the user who recieved the request(FROM)
+PUT http://localhost:3000/request
+
+Content-Type: application/json
+
+{
+    "reqid":"1"
+}

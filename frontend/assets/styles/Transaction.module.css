@@ -1,0 +1,20 @@
+.card {
+    width: 90%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card > div {
+    margin-right: 30px;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+}
+
+.operationButton {
+    height: 50%;
+    margin: 3px;
+}

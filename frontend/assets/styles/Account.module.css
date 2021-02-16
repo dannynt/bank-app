@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../img/home-bg.jpg");
+    background-size: cover;
+    height: 100%;
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+.accountContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card {
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.back {
+    cursor: pointer;
+}
+
+.logo {
+    height: 100px;
+    margin-top: 5%;
+}
+
+.cardContent {
+    padding: 5px 15px !important;
+}
+
+.containerContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contentContainer {
+    display: flex;
+}
